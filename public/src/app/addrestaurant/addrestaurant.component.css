@@ -1,0 +1,30 @@
+mat-form-field,
+textarea {
+  width: 100%;
+}
+
+agm-map {
+  height: 400px;
+  width: 500px;
+ 
+  
+}
+.example-card {
+  max-width: 100%;
+ 
+}
+
+#wrapper{
+  display: inline-flex;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+.image-preview{
+  height: 5rem;
+  margin: 1rem 0;
+}
+.image-preview img{
+  max-height: 100%;
+}

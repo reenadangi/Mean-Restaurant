@@ -1,0 +1,13 @@
+mat-card{
+  font-size: small;
+}
+
+mat-form-field,
+textarea {
+  width: 100%;
+  font-size: small;
+  
+}
+p{
+  color:purple;
+}

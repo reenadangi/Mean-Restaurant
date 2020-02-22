@@ -1,0 +1,45 @@
+<div id="header">
+<h1 >Lets Eat</h1>
+<!-- <img id="logo" src="/assets/images/logo.png" alt="logo"> -->
+
+<ul>
+    <li><a mat-button routerLink=""> Home </a></li>
+    <li  *ngIf="userIsAuthenticated"><a mat-button routerLink="/addrestaurant"> New Restaurant</a></li>
+    <!-- <li ><a mat-button routerLink="/pets/new"> Add a pet to shelter </a></li>
+     -->
+    <!-- <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/cats"> Cats </a></li>
+    <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/dogs"> Dogs </a></li>
+     -->
+    <li *ngIf="!userIsAuthenticated"><a  mat-button routerLink="/login"> Login </a></li>
+    <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/signup"> Signup </a></li>
+    <li *ngIf="userIsAuthenticated" (click)="onLogOut()"><button mat-button>Logout</button></li>
+    
+    
+    <li>
+        <!-- <form class="example-form" (submit)="onSearch(searchForm)" #searchForm="ngForm">
+            <mat-form-field class="example-full-width" color="primary">
+              <input type="text" placeholder="Cuisine" aria-label="Number" matInput [formControl]="mySearch" [matAutocomplete]="auto">
+              
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)='onSearch($event.option.value)'>
+                <mat-option *ngFor="let option of options" [value]={{option}}>
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          
+        </form> -->
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input type="text" placeholder="Select Cuisine" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)='onSearch($event.option.value)'>
+                <mat-option *ngFor="let option of options" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            </form>
+    </li>
+    <li *ngIf="!userIsAuthenticated" (click)="onSearch()"><button mat-button>Search</button></li>
+    
+</ul>
+</div>

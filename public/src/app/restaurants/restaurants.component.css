@@ -1,0 +1,40 @@
+agm-map {
+  height: 300px;
+  width: 100%;
+  margin: 0px;
+  color: black;
+}
+#map {
+  height: 100%;
+  width: 100%;
+}
+agm-info-window{
+  color:black
+}
+.checked {
+  color: orange;
+}
+.info-img{
+  height: 30px;
+  width: 30px;
+
+}
+.card{
+    max-width: 400px;
+    display: inline-flex;
+    margin: 5px;
+}
+
+.example-card {
+    max-width: 250px;
+    height: 500px;
+  }
+  
+  .example-header-image {
+    /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+    background-size: cover;
+    max-height: 100px;
+  }
+  .mat-card-image{
+    max-height: 100px;
+  }

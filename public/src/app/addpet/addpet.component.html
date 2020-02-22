@@ -1,0 +1,40 @@
+<mat-card>
+
+
+
+  
+    <form [formGroup]="form" (submit)="onAddPet()">
+       <mat-form-field>
+          <input matInput placeholder="Pet Name" formControlName="name"  required minlength="3">
+          <mat-error *ngIf="form.get('name').invalid">Should be atleast three chars long </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Pet Type" formControlName="type"  required minlength="3">
+          <mat-error *ngIf="form.get('type').invalid">Pls enter valid type</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Description" formControlName="description"  required minlength="3">
+            <mat-error *ngIf="form.get('description').invalid">Pls enter valid description</mat-error>
+          </mat-form-field>
+       
+
+            <mat-label>Skills:</mat-label>
+          
+            <mat-form-field>
+                <input matInput placeholder="Skill1" formControlName="skill1" >
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Skill2" formControlName="skill2"  >
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Skill3" formControlName="skill3" >
+            </mat-form-field>
+        <br>
+        <div>
+        <button type="submit" mat-raised-button color="primary">Add Pet!</button>
+        </div>
+        </form>
+      </mat-card>
+      
+      

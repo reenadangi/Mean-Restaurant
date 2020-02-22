@@ -1,0 +1,24 @@
+
+<mat-card>
+    <form [formGroup]="form" (submit)="onAddReview()">
+       <mat-form-field>
+          <input matInput placeholder="Customer Name" formControlName="name" id="name"  required minlength="3">
+          <mat-error *ngIf="form.get('name').invalid">Name Should be atleast three chars long </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <input matInput placeholder="rating" formControlName="rating" id="rating" required>
+          <mat-error *ngIf="form.get('rating').invalid">Pls enter valid rating</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder=" Review" formControlName="review" id="review"  required minlength="3">
+            <mat-error *ngIf="form.get('review').invalid">Review Should be atleast three chars long </mat-error>
+          </mat-form-field>
+
+<br>       
+        <div>
+        <button type="submit" mat-raised-button color="primary">Add Review!</button>
+        </div>
+        </form>
+      </mat-card>
+      

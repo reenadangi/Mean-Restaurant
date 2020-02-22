@@ -1,0 +1,59 @@
+<div id="wrapper">
+<mat-card  class="example-card">
+  <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+    <agm-marker
+      [latitude]="latitude"
+      [longitude]="longitude"
+      *ngIf="locationChosen"></agm-marker>
+  </agm-map>
+
+</mat-card >
+<mat-card class="example-card" >
+  
+    <form [formGroup]="form" (submit)="onAddRestaurant()" >
+
+      
+      <mat-form-field>
+        <mat-label>Address << using the directive >></mat-label>
+        <input matInput
+             matGoogleMapsAutocomplete
+             [country]="de"
+             (onAutocompleteSelected)="onAutocompleteSelected($event)"
+             (onLocationSelected)="onLocationSelected($event)">
+      </mat-form-field>
+      <mat-form-field>
+
+        <input matInput placeholder="restaurant Name" formControlName="name" id="name"  required minlength="3">
+          <mat-error *ngIf="form.get('name').invalid">Name Should be atleast three chars long </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select placeholder="Cuisine" formControlName="cuisine"  required>
+            <mat-option value="Indian">Indian</mat-option>
+            <mat-option value="Mexican">Mexican</mat-option>
+            <mat-option value="American">American</mat-option>
+            <mat-option value="Chinese">Chinese</mat-option>
+            <mat-option value="Japanese">Japanese</mat-option>
+            <mat-option value="Japanese">Italian</mat-option>
+          </mat-select>
+        <mat-error *ngIf="form.get('cuisine').invalid">Pls enter valid cuisine</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <textarea matInput placeholder="About" formControlName="about"></textarea>
+        </mat-form-field>
+
+        <div>
+          <button type="button" mat-raised-button color="accent"  (click)="filePicker.click()">pick image</button>
+          <input type="file" name="cover_img" #filePicker (change)="onImagePicked($event)" >
+          </div>
+          <div class="image-preview" *ngIf="imagePreview!=='' && imagePreview">
+            <img [src]="imagePreview" alt="">
+          </div>
+        <br>       
+        <div>
+        <button type="submit" mat-raised-button color="primary">Add Restaurant!</button>
+        </div>
+        </form>
+</mat-card>
+</div>

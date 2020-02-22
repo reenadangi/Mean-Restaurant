@@ -1,0 +1,16 @@
+#login,#signup{
+    vertical-align: top;
+    margin: 10px;
+    width: max-content;
+  }
+#wrapper{
+  display: flex;
+}
+mat-form-field,
+textarea {
+  width: 100%;
+  font-size: small;
+}
+p{
+    color:purple;
+}

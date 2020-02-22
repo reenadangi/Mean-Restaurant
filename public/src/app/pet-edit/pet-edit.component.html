@@ -1,0 +1,76 @@
+ <h4>Edit this pet {{pet.name}}</h4>
+  <mat-card>
+    <form [formGroup]="form" (submit)="editPetForm()">
+       <mat-form-field>
+          <input matInput placeholder="Pet Name" formControlName="name" id="name" required minlength="3" value="{{pet.name}}"> 
+          <mat-error *ngIf="form.get('name').invalid">Pls enter valid name</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <input matInput placeholder="Pet Type" formControlName="type" id="pettype" required minlength="3">
+          <mat-error *ngIf="form.get('type').invalid">Pls enter valid type</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Description" formControlName="description" id="descriptionID" required minlength="3" >
+            <mat-error *ngIf="form.get('description').invalid">Pls enter valid description</mat-error>
+          </mat-form-field>
+       
+          <mat-card>
+            <mat-label>Skills:</mat-label>
+           
+          
+            <mat-form-field color="accent" appearance="outline">
+                <input matInput placeholder="Skill1" formControlName="skill1" id="skill1" >
+            </mat-form-field>
+            <mat-form-field  color="accent" appearance="outline">
+                <input matInput placeholder="Skill2" formControlName="skill2" id="skill2" >
+            </mat-form-field>
+            <mat-form-field color="accent" appearance="outline">
+                <input matInput placeholder="Skill3" formControlName="skill3" id="skill3" >
+            </mat-form-field>
+            </mat-card>
+        <br>
+        <button type="submit" mat-raised-button color="primary">Update Pet!</button>
+        </form>
+      </mat-card>
+
+    <!-- <div *ngIf="pet.name.length < 3" class="row red">
+        <p class="red">A Pets name must be 3 characters longer.</p>
+    </div>
+    <div class="row">
+      <p>Pet Name: <input type="text" name="pet.name" [(ngModel)]="pet.name"></p>
+    </div>
+    <div *ngIf="pet.type.length < 3" class="row red">
+        <p class="red">A Pets Type must be 3 characters or longer.</p>
+    </div>
+    <div class="row">
+      <p>Pet Type: <input type="text" name="pet.type" [(ngModel)]="pet.type"></p>
+    </div>
+    <div *ngIf="pet.description.length < 3" class="row red">
+        <p class="red">A Pets Description must be 3 characters longer.</p>
+    </div>
+    <div class="row">
+      <p>Description: <input type="text" name="pet.description" [(ngModel)]="pet.description"></p>
+    </div>
+    <div class="row">
+      <div class="p">Skills:</div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <p>Skill 1: <input type="text" name="pet.skill1" [(ngModel)]="pet.skill1"></p>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <p>Skill 2: <input type="text" name="pet.skill2" [(ngModel)]="pet.skill2"></p>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <p>Skill 3: <input type="text" name="pet.skill3" [(ngModel)]="pet.skill3"></p>
+    </div>
+    <div class="row">
+      <div class="col-2"><input type="submit" value="Edit Pet"></div>
+      <div class="col-2"><button [routerLink]="['/']">Cancel</button></div>
+      
+    </div>  
+  </form> -->

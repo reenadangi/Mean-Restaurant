@@ -1,0 +1,18 @@
+<p>restaurant-edit works!</p>
+<h4>Edit this restaurant {{restaurant.name}}</h4>
+<mat-card>
+  <form [formGroup]="form" (submit)="editRestaurantForm()">
+     <mat-form-field>
+        <input matInput placeholder="Restaurant Name" formControlName="name" id="name" required minlength="3"> 
+        <mat-error *ngIf="form.get('name').invalid">Pls enter valid name</mat-error>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <input matInput placeholder="Restaurant cuisine" formControlName="cuisine" id="cuisine-id" required minlength="3">
+        <mat-error *ngIf="form.get('cuisine').invalid">Pls enter valid cuisine</mat-error>
+      </mat-form-field>
+
+           <br>
+      <button type="submit" mat-raised-button color="primary">Update Restaurant!</button>
+      </form>
+    </mat-card>

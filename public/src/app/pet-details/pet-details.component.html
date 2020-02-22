@@ -1,0 +1,99 @@
+<p>pet-details works!</p>
+<mat-card *ngIf="pet" class="example-card">
+  <mat-card-header>
+    <mat-card-title>Details about {{pet.name}}</mat-card-title>
+    <mat-card-subtitle>Pet Type : {{pet.type}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{pet.description}}
+    </p>
+  <mat-card>
+      <mat-card-title>Skills</mat-card-title>
+     <mat-card-content>{{pet.skill1}}</mat-card-content>
+     <mat-card-content>{{pet.skill2}}</mat-card-content>
+     <mat-card-content>{{pet.skill3}}</mat-card-content>
+   </mat-card>
+   <br>
+    <p>Likes: {{pet.likes}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button [disabled]="isLiked"(click)="likePet(pet)" mat-button>LIKE</button>
+    <button (click)="deletePet(pet._id)" mat-button>ADOPT</button>
+  </mat-card-actions>
+</mat-card>
+
+
+<!-- <div *ngIf="pet">
+    <div class="row">
+      <div class="col-6">
+        <h3>Details about {{pet.name}}</h3>
+      </div>
+      <div class="col-6">
+        <button [routerLink]="['/']">Home</button>
+      </div>
+    </div>
+    
+    <br>
+    
+    <div class="row">
+      <div class="col-2">
+        <h5>Pet Type:</h5>
+      </div>
+      <div class="col-9">
+        <p>{{pet.type}}</p>
+      </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-2">
+          <h5>Description:</h5>
+        </div>
+        <div class="col-9">
+          <p>{{pet.description}}</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-2">
+          <h5>Skills:</h5>
+        </div>
+        <div class="col-9">
+          <p>{{pet.skill1}}</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-9">
+          <p>{{pet.skill2}}</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-9">
+          <p>{{pet.skill3}}</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-2">
+          <h5>Likes:</h5>
+        </div>
+        <div class="col-9">
+          <p>{{pet.likes}}</p>
+        </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-2">
+         
+        <button [disabled]="isLiked"(click)="likePet(pet)">Like this pet</button>
+      </div>
+      <div class="col-2">
+        <button (click)="deletePet(pet._id)">Adopt this pet!</button>
+      </div>
+    </div>
+
+    </div> -->

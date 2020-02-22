@@ -1,0 +1,17 @@
+.wrapper{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+}
+.example-card {
+    max-width: 500px;
+    text-align: center;
+    margin: 20px;
+    
+  }
+ 
+  
+  .example-header-image {
+    background-image: url("http://localhost:3000/images/boka-1580503676034.jpg");
+    background-size: cover;
+  }

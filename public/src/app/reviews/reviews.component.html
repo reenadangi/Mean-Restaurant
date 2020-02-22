@@ -1,0 +1,31 @@
+<p>reviews works!</p>
+<div class="container">
+    <p class="h2">Reviews</p>
+    <p>These reviews are looking great !</p>
+    
+    <button [routerLink]="['/addreview/'+ restaurantId]">Add review</button>
+    <table class="table table-dark table-condensed">
+       <thead>
+         <tr>
+           <th>Customer</th>
+           <th>rating</th>
+           <th>review</th>
+         
+        </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let review of reviews">
+           <td>{{review.name}}</td>
+           <td>{{review.rating}}</td>
+           <td>{{review.review}}</td>
+           <!-- <td>{{review.restaurant}}</td> -->
+
+          
+          
+         </tr>
+       </tbody>
+     </table>
+   </div>
+   
+   
+   
